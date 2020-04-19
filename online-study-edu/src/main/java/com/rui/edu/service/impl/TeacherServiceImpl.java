@@ -1,0 +1,46 @@
+package com.rui.edu.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.rui.edu.entity.Teacher;
+import com.rui.edu.mapper.TeacherMapper;
+import com.rui.edu.qo.TeacherQuery;
+import com.rui.edu.service.TeacherService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Service;
+
+/**
+ * <p>
+ * 教师 服务实现类
+ * </p>
+ *
+ * @author Rui
+ * @since 2020-03-26
+ */
+@Service
+public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> implements TeacherService {
+
+    @Override
+    public void pageQuery(Page<Teacher> page, TeacherQuery query) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.orderByAsc("sort");
+        if (query == null) {
+            baseMapper.selectPage(page, queryWrapper);
+            return;
+        }
+        if (!StringUtils.isEmpty(query.getName())) {
+            queryWrapper.like("name", query.getName());
+        }
+        if (!StringUtils.isEmpty(query.getLevel())) {
+            queryWrapper.eq("level", query.getLevel());
+        }
+        if (!StringUtils.isEmpty(query.getBegin())) {
+            queryWrapper.ge("gmt_create", query.getBegin());
+        }
+        if (!StringUtils.isEmpty(query.getEnd())) {
+            queryWrapper.le("gmt_create", query.getEnd());
+        }
+        baseMapper.selectPage(page, queryWrapper);
+    }
+}
