@@ -2,4 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rui.edu.mapper.CourseMapper">
 
+    <select id="getBaseCourseInfo" resultType="com.rui.edu.vo.CourseWebVo">
+        SELECT ec.id,ec.title,ec.price,ec.lesson_num AS lessonNum,ec.cover,
+               ec.buy_count AS buyCount,ec.view_count AS viewCount,
+               ecd.description,et.id AS teacherId,et.name AS teacherName,et.intro,et.avatar,
+               es1.id AS subjectId,es1.title AS subjectName
+        FROM edu_course ec LEFT OUTER JOIN edu_course_description ecd ON ec.id=ecd.id
+                           LEFT OUTER JOIN edu_teacher et ON ec.teacher_id=et.id
+                           LEFT OUTER JOIN edu_subject es1 ON ec.subject_id=es1.id
+        WHERE ec.id=#{courseId}
+    </select>
+
 </mapper>

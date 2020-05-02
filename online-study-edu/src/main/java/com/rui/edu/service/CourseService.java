@@ -4,8 +4,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rui.edu.entity.Course;
 import com.rui.edu.qo.CourseQuery;
+import com.rui.edu.vo.CourseFrontVo;
 import com.rui.edu.vo.CoursePublishVo;
 import com.rui.edu.vo.CourseVo;
+import com.rui.edu.vo.CourseWebVo;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -29,4 +33,8 @@ public interface CourseService extends IService<Course> {
     public CoursePublishVo getCoursePublishVoById(String id);
 
     public void publishCourseById(String id);
+
+    Map<String, Object> getCourseFrontList(Page page, CourseFrontVo courseFrontVo);
+
+    CourseWebVo getBaseCourseInfo(String courseId);
 }

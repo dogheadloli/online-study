@@ -28,7 +28,7 @@
         <!-- 讲师头像：TODO -->
         <el-form-item label="头像上传">
           <pan-thumb :image="teacher.avatar"/>
-          <el-button type="primary" icon="upload" @click="imagecropperShow=true">Change Avatar
+          <el-button type="primary" icon="upload" @click="imagecropperShow=true">点击上传
           </el-button>
 
           <image-cropper

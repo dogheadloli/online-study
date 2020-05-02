@@ -20,6 +20,7 @@
       <!-- 所属分类 -->
       <el-form-item label="课程类别">
         <el-cascader
+          emitPath="false"
           v-model="courseInfo.subjectId"
           placeholder="请选择"
           :options="subjectList"
@@ -81,7 +82,7 @@
 
   const defaultForm = {
     title: '',
-    subjectId: '',
+    subjectId: [],
     teacherId: '',
     lessonNum: 0,
     description: '',
@@ -141,14 +142,6 @@
           // 填充一级类别和二级类别
           subject.getNestedTreeList().then(response => {
             this.subjectList = response.data.items
-
-          /*  // 遍历一级类别列表，找到响应的二级类别列表，并填充二级类别
-            for (let i = 0; i < this.subjectNestedList.length; i++) {
-              if (this.subjectNestedList[i].id === this.courseInfo.subjectParentId) {
-                // 当或得到当前数据的一级类别所对应的的二级类别列表时，将二级类别下拉列表进行填充
-                this.subSubjectList = this.subjectNestedList[i].children
-              }
-            }*/
           })
         })
       },
@@ -163,7 +156,6 @@
       // 初始化类别下拉列表数据
       initSubjectList() {
         subject.getNestedTreeList().then(response => {
-          // this.subjectNestedList = response.data.items
           this.subjectList = response.data.items
         })
       },
@@ -180,9 +172,6 @@
 
       // 保存
       saveData() {
-        console.log(this.courseInfo.subjectId);
-        let subIds = eval(this.courseInfo.subjectId);
-        this.courseInfo.subjectId = subIds[subIds.length - 1];
         console.log(this.courseInfo.subjectId);
         course.saveCourseInfo(this.courseInfo).then(response => {
           this.$message({

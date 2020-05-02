@@ -1,6 +1,5 @@
 package com.rui.common.vo;
 
-import com.baomidou.mybatisplus.extension.api.R;
 import com.rui.common.constants.ResultCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

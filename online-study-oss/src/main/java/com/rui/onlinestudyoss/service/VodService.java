@@ -11,7 +11,9 @@ import java.io.IOException;
  * @Description:
  */
 public interface VodService {
-    public String uploadVideo(MultipartFile file) throws IOException;
+    String uploadVideo(MultipartFile file) throws IOException;
 
-    public void deleteVideo(String id) throws ClientException;
+    void deleteVideo(String id) throws ClientException;
+
+    String getPlayAuth(String id);
 }

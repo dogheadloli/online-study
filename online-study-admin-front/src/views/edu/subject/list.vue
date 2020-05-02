@@ -7,7 +7,7 @@
       placeholder="输入关键字进行过滤"/>
 
     <el-row>
-      <el-button type="primary" size="mini" @click="() => appendRootEvent()">添加新根分类</el-button>
+      <el-button type="primary" size="mini" @click="() => appendRootEvent()">添加根分类</el-button>
     </el-row>
 
     <el-tree ref="tree"
@@ -167,7 +167,7 @@
       removeEvent(node, data) {
         console.log(data);
         if (data.children === null) {
-          this.$confirm('确定要删除该节点吗？', '温馨提示', {
+          this.$confirm('确定要删除分类吗？', '温馨提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning'

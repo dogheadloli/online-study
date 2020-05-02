@@ -2,6 +2,7 @@ package com.rui.edu.mapper;
 
 import com.rui.edu.entity.Course;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.rui.edu.vo.CourseWebVo;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface CourseMapper extends BaseMapper<Course> {
 
+    CourseWebVo getBaseCourseInfo(String courseId);
 }

@@ -16,5 +16,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Component
 public interface VodService {
     @DeleteMapping(value = "/admin/vod/video/{id}")
-    public Result removeVideo(@PathVariable("id") String id);
+    Result removeVideo(@PathVariable("id") String id);
 }

@@ -6,6 +6,8 @@ import com.rui.edu.entity.Teacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rui.edu.qo.TeacherQuery;
 
+import java.util.Map;
+
 /**
  * <p>
  * 教师 服务类
@@ -16,6 +18,8 @@ import com.rui.edu.qo.TeacherQuery;
  */
 public interface TeacherService extends IService<Teacher> {
 
-    public void pageQuery(Page<Teacher> page, TeacherQuery query);
+    void pageQuery(Page<Teacher> page, TeacherQuery query);
+
+    Map<String, Object> getTeacherList(Page<Teacher> page);
 
 }

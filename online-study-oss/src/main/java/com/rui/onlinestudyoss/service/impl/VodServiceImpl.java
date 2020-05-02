@@ -5,14 +5,16 @@ import com.aliyun.vod.upload.req.UploadStreamRequest;
 import com.aliyun.vod.upload.req.UploadVideoRequest;
 import com.aliyun.vod.upload.resp.UploadStreamResponse;
 import com.aliyun.vod.upload.resp.UploadVideoResponse;
+import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
-import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
-import com.aliyuncs.vod.model.v20170321.DeleteVideoResponse;
+import com.aliyuncs.vod.model.v20170321.*;
 import com.rui.common.Exception.OnlineStudyException;
 import com.rui.onlinestudyoss.service.VodService;
+import com.rui.onlinestudyoss.utils.InitObject;
 import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -62,6 +64,22 @@ public class VodServiceImpl implements VodService {
         //支持传入多个视频ID，多个用逗号分隔
         request.setVideoIds(id);
         client.getAcsResponse(request);
+    }
+
+    @Override
+    public String getPlayAuth(String id) {
+        try {
+            DefaultAcsClient client = InitObject.initVodClient(KEY_ID, KEY_SERET);
+            GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
+
+            request.setVideoId(id);
+            GetVideoPlayAuthResponse response = client.getAcsResponse(request);
+            String token = response.getPlayAuth();
+            return token;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new OnlineStudyException(50007, "获取凭证失败");
+        }
     }
 
     public static DefaultAcsClient initVodClient(String accessKeyId, String accessKeySecret) throws ClientException {

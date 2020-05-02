@@ -21,11 +21,23 @@ public class FileController {
     @Autowired
     private FileService fileService;
 
+    /**
+     * 头像、封面等图片上传
+     *
+     * @param file
+     * @return
+     */
     @PostMapping("upload")
     public Result uploadFile(@RequestParam("file") MultipartFile file) {
         String url = fileService.uploadFile(file);
         Map map = new HashMap();
         map.put("url", url);
         return Result.ok(map);
+    }
+
+    @DeleteMapping("delete")
+    public Result deleteFile(@RequestParam("url") String url) {
+        fileService.deleteFile(url);
+        return Result.ok();
     }
 }

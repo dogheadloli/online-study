@@ -16,6 +16,6 @@ public class SubjectVo {
     String id;
     String value;
     String label;
-    Subject subject;
+    // Subject subject;
     List<SubjectVo> children;
 }

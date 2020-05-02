@@ -43,16 +43,8 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="课程信息" width="420" align="center">
+      <el-table-column label="课程信息" width="400" align="center">
         <template slot-scope="scope">
-          <!--<div class="info">
-            <div class="pic">
-              <img :src="scope.row.cover" alt="scope.row.title" width="150px">
-            </div>
-            <div class="title">
-              {{ scope.row.title }}
-            </div>
-          </div>-->
           <div class="title">
             {{ scope.row.title }}
           </div>
@@ -68,7 +60,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="价格" width="100" align="center">
+      <el-table-column label="价格" width="120" align="center">
         <template slot-scope="scope">
           <el-tag v-if="Number(scope.row.price) === 0" type="success">免费</el-tag>
           {{ Number(scope.row.price) !== 0 ? '¥' + scope.row.price.toFixed(2) : '' }}
@@ -77,7 +69,7 @@
 
       <el-table-column prop="buyCount" label="付费学员" width="100" align="center">
         <template slot-scope="scope">
-          {{ scope.row.buyCount }}人
+          {{ scope.row.buyCount }}
         </template>
       </el-table-column>
 
@@ -101,7 +93,7 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="操作" width="150" align="center">
+      <el-table-column label="操作" width="180" align="center">
         <template slot-scope="scope">
           <router-link :to="'/edu/course/info/'+scope.row.id">
             <el-button type="primary" plain size="mini" icon="el-icon-edit">编辑课程信息</el-button>

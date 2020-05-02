@@ -6,7 +6,7 @@
         <groupId>com.rui</groupId>
         <artifactId>online-study-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.rui</groupId>
     <artifactId>online-study-oss</artifactId>

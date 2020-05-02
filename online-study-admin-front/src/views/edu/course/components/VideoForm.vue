@@ -31,7 +31,8 @@
               支持3GP、ASF、AVI、DAT、DV、FLV、F4V、<br>
               GIF、M2T、M4V、MJ2、MJPEG、MKV、MOV、MP4、<br>
               MPE、MPG、MPEG、MTS、OGG、QT、RM、RMVB、<br>
-              SWF、TS、VOB、WMV、WEBM 等视频格式上传</div>
+              SWF、TS、VOB、WMV、WEBM 等视频格式上传
+            </div>
             <i class="el-icon-question"/>
           </el-tooltip>
         </el-upload>
@@ -40,7 +41,7 @@
     </el-form>
     <div slot="footer" class="dialog-footer">
       <el-button @click="close">取 消</el-button>
-      <el-button type="primary" @click="saveOrUpdate">确 定</el-button>
+      <el-button type="primary" @click="saveOrUpdate" :disabled="saveBtnDisabled">确 定</el-button>
     </div>
   </el-dialog>
 </template>
@@ -61,6 +62,7 @@
 
     data() {
       return {
+        saveBtnDisabled: true,
         dialogVisible: false,
         video: {// 课时对象
           chapterId: '',
@@ -100,7 +102,7 @@
           video.getById(videoId).then(response => {
             this.video = response.data.item
             if (this.video.videoSourceId && this.video.videoOriginalName) {
-              this.fileList = [{ 'name': this.video.videoOriginalName }]
+              this.fileList = [{'name': this.video.videoOriginalName}]
             }
           })
         }
@@ -164,6 +166,7 @@
       handleVodUploadSuccess(response, file, fileList) {
         this.video.videoSourceId = response.data.videoId
         this.video.videoOriginalName = file.name
+        this.saveBtnDisabled = false;
       },
 
       // 文件超出上传限制的回调

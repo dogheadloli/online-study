@@ -2,6 +2,7 @@ package com.rui.edu.service;
 
 import com.rui.edu.entity.Subject;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.rui.edu.vo.OneSubject;
 import com.rui.edu.vo.SubjectVo;
 
 import java.util.List;
@@ -17,5 +18,9 @@ import java.util.List;
 public interface SubjectService extends IService<Subject> {
 
     List<SubjectVo> nestedList();
+
+    List<OneSubject> getAllOneTwoSubject();
+
+    void deleteSubject(String id);
 
 }

@@ -74,4 +74,18 @@ public class FileServiceImpl implements FileService {
                     ResultCodeEnum.FILE_UPLOAD_ERROR.getMessage());
         }
     }
+
+    @Override
+    public void deleteFile(String url) {
+        // 创建OSSClient实例。
+        OSS ossClient = new OSSClientBuilder().build(END_POINT, KEY_ID, KEY_SERET);
+        if (!ossClient.doesBucketExist(BUCKET_NAME)) {
+            ossClient.createBucket(BUCKET_NAME);
+            ossClient.setBucketAcl(BUCKET_NAME, CannedAccessControlList.PublicRead);
+        }
+        String prefix = "https://" + BUCKET_NAME + "." + END_POINT + "/";
+        String objectName = url.replace(prefix, "");
+        ossClient.deleteObject(BUCKET_NAME, objectName);
+        ossClient.shutdown();
+    }
 }

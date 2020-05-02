@@ -21,7 +21,7 @@ public class CourseVo {
     private String teacherId;
 
     @ApiModelProperty(value = "课程专业ID")
-    private String subjectId;
+    private String[] subjectId;
 
     @ApiModelProperty(value = "课程标题")
     private String title;

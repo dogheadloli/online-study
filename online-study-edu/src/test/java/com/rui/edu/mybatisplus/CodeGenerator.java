@@ -64,7 +64,13 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude(moduleName + "_\\w*");//设置要映射的表名
+        // strategy.setInclude(moduleName + "_\\w*");//设置要映射的表名
+        // strategy.setInclude(moduleName+"_blog");
+        // strategy.setInclude(moduleName+"_blog_description");
+        // strategy.setInclude("fill_question");
+        // strategy.setInclude("judge_question");
+         strategy.setInclude("multi_question");
+        // strategy.setInclude("question_library");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_");//设置表前缀不生成
 
