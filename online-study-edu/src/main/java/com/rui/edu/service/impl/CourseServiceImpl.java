@@ -161,6 +161,10 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         courseDescriptionMapper.deleteById(id);
         // 删课程
         baseMapper.deleteById(id);
+        // 删题库
+        QueryWrapper queryWrapper1 = new QueryWrapper();
+        queryWrapper.eq("course_id", id);
+        questionLibraryMapper.delete(queryWrapper);
     }
 
     @Override

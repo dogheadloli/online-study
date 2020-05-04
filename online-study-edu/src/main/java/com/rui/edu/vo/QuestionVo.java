@@ -1,6 +1,10 @@
 package com.rui.edu.vo;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * @Author: ChangRui
@@ -14,4 +18,7 @@ public class QuestionVo {
     String courseId;
     String courseName;
     String question;
+    String optionValue;
+    Date gmtCreate;
+    Date gmtModified;
 }

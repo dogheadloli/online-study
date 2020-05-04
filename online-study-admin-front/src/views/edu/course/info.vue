@@ -11,14 +11,14 @@
     </el-steps>
 
     <!-- 课程信息表单-->
-    <el-form label-width="120px">
+    <el-form :model="courseInfo" label-width="120px">
 
-      <el-form-item label="课程标题">
+      <el-form-item label="课程标题" :prop="'title'" :rules="rules.title">
         <el-input placeholder="请输入标题" v-model="courseInfo.title"/>
       </el-form-item>
 
       <!-- 所属分类 -->
-      <el-form-item label="课程类别">
+      <el-form-item label="课程类别" :prop="'subjectId'" :rules="rules.subjectId">
         <el-cascader
           emitPath="false"
           v-model="courseInfo.subjectId"
@@ -29,7 +29,7 @@
       </el-form-item>
 
       <!-- 课程讲师 -->
-      <el-form-item label="课程教师">
+      <el-form-item label="课程教师" :prop="'teacherId'" :rules="rules.teacherId">
         <el-select
           v-model="courseInfo.teacherId"
           placeholder="请选择">
@@ -101,7 +101,24 @@
         subjectList: [],
         teacherList: [], // 讲师列表
         BASE_API: process.env.BASE_API, // api接口地址
-        UPLOAD_API: process.env.UPLOAD_API
+        UPLOAD_API: process.env.UPLOAD_API,
+        rules:{
+          title:{
+            required:true,
+            message:"请输入课程标题",
+            trigger:"blur"
+          },
+          subjectId:{
+            required:true,
+            message:"请选择课程类别",
+            trigger:"change"
+          },
+          teacherId:{
+            required:true,
+            message:"请选择教师",
+            trigger:"change"
+          }
+        }
       }
     },
 

@@ -18,7 +18,7 @@
              :expand-on-click-node="false">
       <span class="tree-expand" slot-scope="{ node,data }">
         <span class="tree-label">{{ node.label }}</span>
-         <span class="tree-btn">
+         <span class="tree-btn" >
             <el-button type="text" @click="() => appendEvent(node,data)">
               <i class="el-icon-plus"></i>
             </el-button>

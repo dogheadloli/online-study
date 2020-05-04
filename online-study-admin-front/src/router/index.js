@@ -69,7 +69,6 @@ export const constantRouterMap = [
   },
 
 
-
   // 课程分类管理
   {
     path: '/edu/subject',
@@ -126,6 +125,35 @@ export const constantRouterMap = [
         name: 'EduCoursePublishEdit',
         component: () => import('@/views/edu/course/publish'),
         meta: {title: '发布课程', noCache: true},
+        hidden: true
+      }
+    ]
+  },
+
+  // 题库管理
+  {
+    path: '/edu/library',
+    component: Layout,
+    redirect: '/edu/library/list',
+    name: 'exam',
+    meta: {title: '题库管理', icon: 'form'},
+    children: [
+      {
+        path: 'question',
+        name: 'EduQuestionList',
+        component: () => import('@/views/edu/library/question'),
+        meta: {title: '所有试题'}
+      },
+      {
+        path: 'info',
+        name: 'EduLibraryInfo',
+        component: () => import('@/views/edu/library/listLibrary'),
+        meta: {title: '题库管理'}
+      },
+      {
+        path: 'addQuestion',
+        name: 'EduQuestion',
+        component: () => import('@/views/edu/library/addQuestion'),
         hidden: true
       }
     ]
