@@ -2,7 +2,6 @@ package com.rui.edu.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rui.common.vo.Result;
-import com.rui.edu.entity.Chapter;
 import com.rui.edu.entity.Course;
 import com.rui.edu.service.ChapterService;
 import com.rui.edu.service.CourseService;

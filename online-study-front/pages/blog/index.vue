@@ -59,23 +59,9 @@
               </el-card>
               <img class="star" src="~/assets/star.png"/>
             </el-row>
-
-            <!--<div class="block pagination">
-              <el-pagination background="#f9f9f9" layout="prev, pager, next" :total="50">
-              </el-pagination>
-            </div>-->
-
           </el-col>
-          <!--<el-col :span="6" class="hidden-sm-and-down" id="side">
-            <div class="item">
-              <tag></tag>
-            </div>
-            <div class="item">
-            </div>
-          </el-col>-->
         </el-row>
 
-        <!-- </section>-->
       </li>
 
       <!-- 公共分页 开始 -->
@@ -128,8 +114,6 @@
   import cookie from 'js-cookie'
 
   export default {
-    //异步调用，调用一次
-    //params: 相当于之前 this.$route.params.id  等价  params.id
     data() {
       return {
         page: 1,

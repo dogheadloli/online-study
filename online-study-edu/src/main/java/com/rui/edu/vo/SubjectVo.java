@@ -1,6 +1,5 @@
 package com.rui.edu.vo;
 
-import com.rui.edu.entity.Subject;
 import lombok.Data;
 
 

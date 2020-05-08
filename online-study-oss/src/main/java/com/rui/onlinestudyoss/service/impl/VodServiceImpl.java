@@ -2,10 +2,7 @@ package com.rui.onlinestudyoss.service.impl;
 
 import com.aliyun.vod.upload.impl.UploadVideoImpl;
 import com.aliyun.vod.upload.req.UploadStreamRequest;
-import com.aliyun.vod.upload.req.UploadVideoRequest;
 import com.aliyun.vod.upload.resp.UploadStreamResponse;
-import com.aliyun.vod.upload.resp.UploadVideoResponse;
-import com.aliyuncs.AcsResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
@@ -14,7 +11,6 @@ import com.rui.common.Exception.OnlineStudyException;
 import com.rui.onlinestudyoss.service.VodService;
 import com.rui.onlinestudyoss.utils.InitObject;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

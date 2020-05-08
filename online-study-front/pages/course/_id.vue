@@ -5,9 +5,6 @@
       <section class="path-wrap txtOf hLh30">
         <a href="#" title class="c-999 fsize14">首页</a>
         \
-        <!--<a href="#" title class="c-999 fsize14">{{courseWebVo.subjectLevelOne}}</a>
-        \
-        <span class="c-333 fsize14">{{courseWebVo.subjectLevelTwo}}</span>-->
       </section>
       <div>
         <article class="c-v-pic-wrap" style="height: 357px;">

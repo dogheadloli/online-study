@@ -197,6 +197,9 @@
 
       //3 分页切换的方法
       gotoPage(page) {
+        if (page > this.data.pages) {
+          page = this.data.pages;
+        }
         courseApi.getCourseList(page, 8, this.searchObj).then(response => {
           this.data = response.data.data
         })

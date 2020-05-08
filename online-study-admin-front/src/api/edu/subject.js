@@ -1,5 +1,4 @@
 import request from '@/utils/request'
-import qs from 'qs'
 
 const api_name = '/admin/edu/subject'
 

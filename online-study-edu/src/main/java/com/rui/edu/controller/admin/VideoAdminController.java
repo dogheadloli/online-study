@@ -50,7 +50,6 @@ public class VideoAdminController {
         return Result.ok();
     }
 
-    // TODO
     @GetMapping("/video-info/{id}")
     public Result getByid(@PathVariable String id) {
         Video video = videoService.getById(id);

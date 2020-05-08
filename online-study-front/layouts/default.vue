@@ -22,8 +22,8 @@
             <router-link to="/blog" tag="li" active-class="current">
               <a>文章</a>
             </router-link>
-            <router-link to="/qa" tag="li" active-class="current">
-              <a>问答</a>
+            <router-link to="/exam" tag="li" active-class="current">
+              <a>习题</a>
             </router-link>
           </ul>
           <!-- / nav -->
@@ -41,9 +41,6 @@
             </li>
 
             <li v-if="loginInfo.id" id="is-login-one" class="mr10">
-              <!--<a id="headerMsgCountId" href="#" title="消息">
-                <em class="icon18 news-icon">&nbsp;</em>
-              </a>-->
               <q class="red-point" style="display: none">&nbsp;</q>
             </li>
 

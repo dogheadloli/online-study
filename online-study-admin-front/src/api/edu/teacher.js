@@ -5,7 +5,7 @@ const api_name = '/admin/edu/teacher'
 export default{
   getList() {
     return request({// 封装axios
-      url: '/admin/edu/teacher',
+      url: `${api_name}`,
       method: 'get'
     })
   },

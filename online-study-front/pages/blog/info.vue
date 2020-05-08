@@ -61,11 +61,6 @@
   }
 
   export default {
-    /* components: {
-       VueEditor
-     },*/
-    // 组件注册
-    /*components: {Tinymce},*/
 
     data() {
       return {
@@ -107,18 +102,6 @@
 
       },
 
-      /* fetchBlogInfoById(id) {
-         blog.getBlogInfo(id).then(response => {
-           this.blogInfo = response.data.item
-
-           // 填充一级类别和二级类别
-           subject.getNestedTreeList().then(response => {
-             this.subjectList = response.data.items
-           })
-         })
-       },*/
-
-
       // 初始化类别下拉列表数据
       initSubjectList() {
         console.log('1')
@@ -130,11 +113,6 @@
       save() {
         console.log('next')
         this.saveBtnDisabled = true
-        /*if (!this.blogInfo.id) {
-          this.saveData()
-        } else {
-          this.updateData()
-        }*/
         this.saveData()
       },
 
@@ -164,18 +142,6 @@
           this.$router.push({path: '/blog'})
         })
       }
-
-      /*updateData() {
-        this.saveBtnDisabled = true
-        course.updateCourseInfoById(this.courseInfo).then(response => {
-          this.$message({
-            type: 'success',
-            message: '修改成功!'
-          })
-        }).then(() => {
-          this.$router.push({path: '/edu/course/chapter/' + this.courseInfo.id})
-        })
-      },*/
 
     }
   }

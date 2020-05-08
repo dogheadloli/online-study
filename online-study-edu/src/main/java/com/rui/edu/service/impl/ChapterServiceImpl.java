@@ -1,6 +1,5 @@
 package com.rui.edu.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.rui.edu.entity.Chapter;
 import com.rui.edu.entity.Video;

@@ -4,7 +4,6 @@ import com.aliyuncs.exceptions.ClientException;
 import com.rui.common.Exception.OnlineStudyException;
 import com.rui.common.vo.Result;
 import com.rui.onlinestudyoss.service.VodService;
-import com.rui.onlinestudyoss.utils.InitObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

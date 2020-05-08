@@ -7,13 +7,11 @@ import com.rui.common.Exception.OnlineStudyException;
 import com.rui.common.constants.ResultCodeEnum;
 import com.rui.onlinestudyoss.service.FileService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.http.fileupload.FileUpload;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
