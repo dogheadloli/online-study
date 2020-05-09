@@ -41,7 +41,7 @@ public class MsmController {
                 template.opsForValue().set(phone, code, 5, TimeUnit.MINUTES);
                 return Result.ok();
             } else {
-                return Result.error(50001, "短息发送失败");
+                return Result.error(50001, "网络繁忙，请稍后再试");
             }
         }
     }
