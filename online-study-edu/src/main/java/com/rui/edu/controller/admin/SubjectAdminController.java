@@ -7,7 +7,6 @@ import com.rui.edu.service.SubjectService;
 import com.rui.edu.vo.OneSubject;
 import com.rui.edu.vo.SubjectVo;
 import com.rui.edu.vo.SubjectVo2;
-import com.rui.edu.vo.SubjectVo3;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -54,10 +53,10 @@ public class SubjectAdminController {
     }
 
     @PostMapping("update")
-    public Result update(@RequestBody SubjectVo3 subjectVo3) {
+    public Result update(@RequestBody SubjectVo2 subjectVo2) {
         Subject subject = new Subject();
-        subject.setId(subjectVo3.getId());
-        subject.setTitle(subjectVo3.getTitle());
+        subject.setId(subjectVo2.getId());
+        subject.setTitle(subjectVo2.getTitle());
         subject.setGmtModified(new Date());
 
         subjectService.saveOrUpdate(subject);

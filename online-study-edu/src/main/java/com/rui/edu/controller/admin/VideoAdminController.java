@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @RestController
 @CrossOrigin
-@RequestMapping("admin/edu/video")
+@RequestMapping("/admin/edu/video")
 public class VideoAdminController {
 
     @Autowired

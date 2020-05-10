@@ -18,7 +18,7 @@
              :expand-on-click-node="false">
       <span class="tree-expand" slot-scope="{ node,data }">
         <span class="tree-label">{{ node.label }}</span>
-         <span class="tree-btn" >
+         <span class="tree-btn">
             <el-button type="text" @click="() => appendEvent(node,data)">
               <i class="el-icon-plus"></i>
             </el-button>
@@ -111,7 +111,13 @@
       /*节点新增，新增树形菜单事件分类弹窗，提交按钮*/
       addEventFormSubmitBtn() {
         /*获取当前input上输入的文字*/
-        subject.save(this.addEventForm).then((res) => {
+
+        subject.save(this.addEventForm).then(response => {
+          return this.$message({
+            type: 'success',
+            message: '保存成功!'
+          })
+        }).then((res) => {
           console.log('请求成功');
           this.addEventdialogVisible = false;
           this.addEventForm.subjectName = '';
@@ -123,6 +129,11 @@
       updateEventFormSubmitBtn() {
         /*获取当前input上输入的文字*/
         subject.update(this.updateEventForm).then((res) => {
+          return this.$message({
+            type: 'success',
+            message: '修改成功!'
+          })
+        }).then((res) => {
           console.log('请求成功');
           this.updateEventdialogVisible = false;
           this.updateEventForm.subjectName = '';
@@ -140,15 +151,17 @@
       /*树形控件添加节点，添加弹窗出现*/
       appendEvent(node, data) {
         this.addEventdialogVisible = true;
-        this.addEventForm.parentNodeId = data.subject.id;
-        this.addEventForm.parentLevel = data.subject.level;
+        this.addEventForm.parentNodeId = data.id;
+        this.addEventForm.parentLevel = data.level;
       },
 
       /*树形控件修改节点，添加弹窗出现*/
       appendUpdateEvent(node, data) {
+        console.log(data)
         this.updateEventdialogVisible = true;
-        this.updateEventForm.currentSubjectName = data.subject.title;
-        this.updateEventForm.nodeId = data.subject.id;
+        this.updateEventForm.currentSubjectName = data.label;
+        this.updateEventForm.nodeId = data.id;
+        this.addEventForm.parentLevel = data.level;
       },
 
       /*关闭窗口*/
@@ -172,8 +185,12 @@
             cancelButtonText: '取消',
             type: 'warning'
           }).then(() => {
-            subject.delete(data.subject.id).then((res) => {
-              console.log('请求成功');
+            subject.delete(data.id).then((res) => {
+              return this.$message({
+                type: 'success',
+                message: '删除成功!'
+              })
+            }).then(() => {
               this.fetchNodeList();
             });
           })

@@ -16,7 +16,7 @@ import java.util.Map;
  */
 @RestController
 @CrossOrigin
-@RequestMapping("/admin/oss/file")
+@RequestMapping("/oss/file")
 public class FileController {
     @Autowired
     private FileService fileService;

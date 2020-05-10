@@ -1,12 +1,12 @@
 import request from '@/utils/request'
 
-const api_name = '/admin/edu/video'
+const api_name = '/edu/video'
 
 export default {
 
   save(videoInfo) {
     return request({
-      url: `${api_name}/save-video-info`,
+      url: `/admin/edu/video/save-video-info`,
       method: 'post',
       data: videoInfo
     })

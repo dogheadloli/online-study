@@ -9,6 +9,7 @@ import lombok.Data;
  */
 @Data
 public class SubjectVo2 {
+    String id;
     String title;
     String parentId;
     Integer parentLevel;

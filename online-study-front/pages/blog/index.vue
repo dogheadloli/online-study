@@ -237,7 +237,11 @@
   .art-abstract {
     flex: 1;
     color: #aaa;
-
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
   }
 
   .art-more {

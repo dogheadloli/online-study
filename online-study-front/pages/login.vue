@@ -9,19 +9,17 @@
     <div class="sign-up-container">
       <el-form ref="userForm" :model="user">
 
-        <el-form-item class="input-prepend restyle" prop="mobile"
+        <el-form-item  prop="mobile"
                       :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]">
           <div>
-            <el-input type="text" placeholder="手机号" v-model="user.mobile"/>
-            <i class="iconfont icon-phone"/>
+            <el-input prefix-icon="iconfont icon-phone" type="text" placeholder="手机号" v-model="user.mobile"/>
           </div>
         </el-form-item>
 
-        <el-form-item class="input-prepend" prop="password"
+        <el-form-item  prop="password"
                       :rules="[{ required: true, message: '请输入密码', trigger: 'blur' }]">
           <div>
-            <el-input type="password" placeholder="密码" v-model="user.password"/>
-            <i class="iconfont icon-password"/>
+            <el-input prefix-icon="iconfont icon-password" type="password" placeholder="密码" v-model="user.password"/>
           </div>
         </el-form-item>
 

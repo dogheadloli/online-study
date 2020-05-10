@@ -8,6 +8,7 @@
         <module>online-study-oss</module>
         <module>online-study-cms</module>
         <module>online-study-msm</module>
+        <module>online-study-getway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

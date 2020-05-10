@@ -1,19 +1,19 @@
 import request from '@/utils/request'
 
-const api_name = '/admin/vod/video'
+const api_name = '/vod/video'
 
 export default {
 
   removeById(id) {
     return request({
-      url: `http://127.0.0.1:8130/admin/vod/video/${id}`,
+      url: `${api_name}/${id}`,
       method: 'delete'
     })
   },
 
   getUploadAuthAndAddress(title, fileName) {
     return request({
-      url: `http://127.0.0.1:8130/get-upload-auth-and-address/${title}/${fileName}`,
+      url: `${api_name}/get-upload-auth-and-address/${title}/${fileName}`,
       method: 'get'
     })
   },

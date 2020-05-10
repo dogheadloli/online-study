@@ -28,7 +28,7 @@ public class TeacherServiceImpl extends ServiceImpl<TeacherMapper, Teacher> impl
     @Override
     public void pageQuery(Page<Teacher> page, TeacherQuery query) {
         QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.orderByAsc("sort");
+        queryWrapper.orderByDesc("gmt_create");
         if (query == null) {
             baseMapper.selectPage(page, queryWrapper);
             return;

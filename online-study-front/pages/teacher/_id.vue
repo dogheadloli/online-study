@@ -14,17 +14,17 @@
             <section class="t-infor-pic">
               <img :src="teacher.avatar">
             </section>
-            <h3 class="hLh30">
-              <span class="fsize24 c-333">{{teacher.name}}&nbsp;
-                {{ teacher.level===1?'高级讲师':'首席讲师' }}
+            <h2 class="hLh30">
+              <span class="fsize34 c-333">{{teacher.name}}&nbsp;
               </span>
-            </h3>
+              <span class="fsize24 c-333">{{ teacher.level===1?'高级讲师':'首席讲师' }}
+              </span>
+            </h2>
             <section class="mt10">
               <span class="t-tag-bg">{{teacher.intro}}</span>
             </section>
             <section class="t-infor-txt">
-              <p
-                class="mt20">{{teacher.career}}</p>
+              <p class="mt20">{{teacher.career}}</p>
             </section>
             <div class="clear"></div>
           </div>
@@ -52,17 +52,17 @@
               <li v-for="course in courseList" :key="course.id">
                 <div class="cc-l-wrap">
                   <section class="course-img">
-                    <img :src="course.cover" class="img-responsive" >
+                    <img :src="course.cover" class="img-responsive">
                     <div class="cc-mask">
-                      <a href="#" title="开始学习" target="_blank" class="comm-btn c-btn-1">开始学习</a>
+                      <a :href="'/course/'+course.id" title="开始学习" target="_blank" class="comm-btn c-btn-1">开始学习</a>
                     </div>
                   </section>
                   <h3 class="hLh30 txtOf mt10">
-                    <a href="#" :title="course.title" target="_blank" class="course-title fsize18 c-333">{{course.title}}</a>
+                    <a :href="'/course/'+course.id" :title="course.title" target="_blank" class="course-title fsize18 c-333">{{course.title}}</a>
                   </h3>
                 </div>
               </li>
-             
+
             </ul>
             <div class="clear"></div>
           </article>
@@ -73,18 +73,19 @@
   </div>
 </template>
 <script>
-import teacherApi from '@/api/teacher'
-export default {
-  //params.id获取路径id值
-  asyncData({ params, error }) {
-    return teacherApi.getTeacherInfo(params.id)
-      .then(response => {
-        return {
-          teacher: response.data.data.teacher,
-          courseList: response.data.data.courseList
-        }
-      })
-  }
+  import teacherApi from '@/api/teacher'
 
-};
+  export default {
+    //params.id获取路径id值
+    asyncData({params, error}) {
+      return teacherApi.getTeacherInfo(params.id)
+        .then(response => {
+          return {
+            teacher: response.data.data.teacher,
+            courseList: response.data.data.courseList
+          }
+        })
+    }
+
+  };
 </script>

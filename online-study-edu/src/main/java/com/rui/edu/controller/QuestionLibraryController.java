@@ -24,7 +24,7 @@ import java.util.Map;
  * @since 2020-05-02
  */
 @RestController
-@RequestMapping("/edu/question-library")
+@RequestMapping("/eduservice/question-library")
 @CrossOrigin
 public class QuestionLibraryController {
 

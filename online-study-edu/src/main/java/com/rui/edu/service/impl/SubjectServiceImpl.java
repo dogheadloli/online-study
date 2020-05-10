@@ -87,7 +87,7 @@ public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> impl
             subjectVo.setId(subject.getId());
             subjectVo.setValue(subject.getId());
             subjectVo.setLabel(subject.getTitle());
-            // subjectVo.setSubject(subject);
+            subjectVo.setLevel(subject.getLevel());
             List<SubjectVo> child = recurrenceList(subject.getId());
             subjectVo.setChildren(child);
             subjectNestedVoList.add(subjectVo);

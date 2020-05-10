@@ -22,7 +22,7 @@ import java.util.Map;
  * @since 2020-04-25
  */
 @RestController
-@RequestMapping("/edu/blog")
+@RequestMapping("/eduservice/blog")
 @CrossOrigin
 public class BlogFrontController {
 

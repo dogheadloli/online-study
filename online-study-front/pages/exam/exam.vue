@@ -87,13 +87,14 @@
             <div class="analysis" v-if="isPractice">
               <ul>
                 <li>
+                  <el-tag type="success">正确答案：</el-tag>
+                  <span class="right">{{currentQuestion.rightAnswer}}</span>
+                </li>
+                <li>
                   <el-tag>结果：</el-tag>
                   <span v-if="currentQuestion.rightAnswer == multiAnswer[currentIndex]" class="answerRight">回答正确</span>
                   <span v-if="currentQuestion.rightAnswer != multiAnswer[currentIndex]" class="answerFail">回答错误</span>
                 </li>
-                <li>
-                  <el-tag type="success">正确答案：</el-tag>
-                  <span class="right">{{currentQuestion.rightAnswer}}</span></li>
                 <li>
                   <el-tag>答案解析：</el-tag>
                 </li>
@@ -118,13 +119,14 @@
             <div class="analysis" v-if="isPractice">
               <ul>
                 <li>
+                  <el-tag type="success">正确答案：</el-tag>
+                  <span class="right">{{currentQuestion.answer}}</span>
+                </li>
+                <li>
                   <el-tag>结果：</el-tag>
                   <span v-if="currentQuestion.answer == fillAnswer[currentIndex]" class="answerRight">回答正确</span>
                   <span v-if="currentQuestion.answer != fillAnswer[currentIndex]" class="answerFail">回答错误</span>
                 </li>
-                <li>
-                  <el-tag type="success">正确答案：</el-tag>
-                  <span class="right">{{currentQuestion.answer}}</span></li>
                 <li>
                   <el-tag>答案解析：</el-tag>
                 </li>
@@ -146,13 +148,14 @@
             <div class="analysis" v-if="isPractice">
               <ul>
                 <li>
+                  <el-tag type="success">正确答案：</el-tag>
+                  <span class="right">{{currentQuestion.answer}}</span>
+                </li>
+                <li>
                   <el-tag>结果：</el-tag>
                   <span v-if="currentQuestion.answer == judgeAnswer[currentIndex]" class="answerRight">回答正确</span>
                   <span v-if="currentQuestion.answer != judgeAnswer[currentIndex]" class="answerFail">回答错误</span>
                 </li>
-                <li>
-                  <el-tag type="success">正确答案：</el-tag>
-                  <span class="right">{{currentQuestion.answer}}</span></li>
                 <li>
                   <el-tag>答案解析：</el-tag>
                 </li>
@@ -360,6 +363,7 @@
           type: 'warning'
         }).then(() => {
           this.isPractice = true
+          this.getQuestion(0, 1)
           window.scrollTo(0, 0)
         })
       },
@@ -399,7 +403,6 @@
     .right {
       color: #2776df;
       font-size: 18px;
-      border: 1px solid #2776df;
       padding: 0px 6px;
       border-radius: 4px;
       margin-left: 20px;
@@ -510,8 +513,9 @@
   }
 
   .content {
-    font-size: 18px;
+    font-size: 16px;
     padding: 0px 20px;
+    line-height: 150%;
   }
 
   .content .topic {

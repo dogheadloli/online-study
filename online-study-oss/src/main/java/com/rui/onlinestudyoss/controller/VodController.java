@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @CrossOrigin
 @RestController
-@RequestMapping("/admin/vod/video")
+@RequestMapping("/vod/video")
 public class VodController {
     @Autowired
     VodService vodService;

@@ -21,7 +21,7 @@ import java.util.Map;
  * @since 2020-05-02
  */
 @RestController
-@RequestMapping("/edu/judge-question")
+@RequestMapping("/eduservice/judge-question")
 @CrossOrigin
 public class JudgeQuestionController {
     @Autowired

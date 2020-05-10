@@ -72,6 +72,11 @@ export default {
     publish() {
       console.log('publish')
       course.publishCourse(this.courseId).then(response => {
+        return this.$message({
+          type: 'success',
+          message: '发布成功!'
+        })
+      }).then(() => {
         this.$router.push({ path: '/edu/course/list' })
         this.active = 3
       })

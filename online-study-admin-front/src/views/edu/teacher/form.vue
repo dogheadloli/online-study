@@ -36,7 +36,7 @@
             :width="300"
             :height="300"
             :key="imagecropperKey"
-            :url="UPLOAD_API+'/admin/oss/file/upload'"
+            :url="UPLOAD_API+'/oss/file/upload'"
             :max-size="2048"
             field="file"
             @close="close"

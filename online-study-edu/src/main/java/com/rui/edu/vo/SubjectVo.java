@@ -15,6 +15,6 @@ public class SubjectVo {
     String id;
     String value;
     String label;
-    // Subject subject;
+    Integer level;
     List<SubjectVo> children;
 }

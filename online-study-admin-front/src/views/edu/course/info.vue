@@ -56,7 +56,7 @@
           :show-file-list="false"
           :on-success="handleCoverSuccess"
           :before-upload="beforeCoverUpload"
-          :action="UPLOAD_API+'/admin/oss/file/upload?host=cover'"
+          :action="UPLOAD_API+'/oss/file/upload?host=cover'"
           class="avatar-uploader">
           <img :src="courseInfo.cover">
         </el-upload>

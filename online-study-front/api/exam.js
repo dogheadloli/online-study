@@ -3,72 +3,72 @@ import request from '@/utils/request'
 export default {
   getExam(id){
     return request({
-      url:`/edu/question-library/getExam/${id}`,
+      url:`/eduservice/question-library/getExam/${id}`,
       method:'get',
     })
   },
   getPageList(page, limit) {
     return request({
-      url: `/edu/question-library/list/${page}/${limit}`,
+      url: `/eduservice/question-library/list/${page}/${limit}`,
       method: 'get',
     })
   },
 
   getMultQuestion(page, limit) {
     return request({
-      url: `/edu/multi-question/listQuestion/${page}/${limit}`,
+      url: `/eduservice/multi-question/listQuestion/${page}/${limit}`,
       method: 'get',
     })
   },
   getFillQuestion(page, limit) {
     return request({
-      url: `/edu/fill-question/listQuestion/${page}/${limit}`,
+      url: `/eduservice/fill-question/listQuestion/${page}/${limit}`,
       method: 'get',
     })
   },
   getJudgeQuestion(page, limit) {
     return request({
-      url: `/edu/judge-question/listQuestion/${page}/${limit}`,
+      url: `/eduservice/judge-question/listQuestion/${page}/${limit}`,
       method: 'get',
     })
   },
 
   getMultQuestionById(id) {
     return request({
-      url: `/edu/multi-question/getQuestion/${id}`,
+      url: `/eduservice/multi-question/getQuestion/${id}`,
       method: `get`,
     })
   },
   getFillQuestionById(id) {
     return request({
-      url: `/edu/fill-question/getQuestion/${id}`,
+      url: `/eduservice/fill-question/getQuestion/${id}`,
       method: `get`,
     })
   },
   getJudgeQuestionById(id) {
     return request({
-      url: `/edu/judge-question/getQuestion/${id}`,
+      url: `/eduservice/judge-question/getQuestion/${id}`,
       method: `get`,
     })
   },
 
   addMultiQuestion(multiQuestion) {
     return request({
-      url: '/edu/multi-question/addQuestion',
+      url: '/eduservice/multi-question/addQuestion',
       method: 'post',
       data: multiQuestion
     })
   },
   addFillQuestion(fillQuestion) {
     return request({
-      url: '/edu/fill-question/addQuestion',
+      url: '/eduservice/fill-question/addQuestion',
       method: 'post',
       data: fillQuestion
     })
   },
   addJudgeQuestion(judgeQuestion) {
     return request({
-      url: '/edu/judge-question/addQuestion',
+      url: '/eduservice/judge-question/addQuestion',
       method: 'post',
       data: judgeQuestion
     })
@@ -76,28 +76,28 @@ export default {
 
   deleteMultiQuestionById(id){
     return request({
-      url:`/edu/multi-question/deleteQuestion/${id}`,
+      url:`/eduservice/multi-question/deleteQuestion/${id}`,
       method:'delete'
     })
   },
 
   deleteFillQuestionById(id){
     return request({
-      url:`/edu/fill-question/deleteQuestion/${id}`,
+      url:`/eduservice/fill-question/deleteQuestion/${id}`,
       method:'delete'
     })
   },
 
   deleteJudgeQuestionById(id){
     return request({
-      url:`/edu/judge-question/deleteQuestion/${id}`,
+      url:`/eduservice/judge-question/deleteQuestion/${id}`,
       method:'delete'
     })
   },
 
   updateMultiQuestion(multiQuestion){
     return request({
-      url: '/edu/multi-question/updateQuestion',
+      url: '/eduservice/multi-question/updateQuestion',
       method: 'post',
       data: multiQuestion
     })
@@ -105,7 +105,7 @@ export default {
 
   updateFillQuestion(fillQuestion){
     return request({
-      url: '/edu/fill-question/updateQuestion',
+      url: '/eduservice/fill-question/updateQuestion',
       method: 'post',
       data: fillQuestion
     })
@@ -113,7 +113,7 @@ export default {
 
   updateJudgeQuestion(judgeQuestion){
     return request({
-      url: '/edu/judge-question/updateQuestion',
+      url: '/eduservice/judge-question/updateQuestion',
       method: 'post',
       data: judgeQuestion
     })

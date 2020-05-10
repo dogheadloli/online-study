@@ -22,7 +22,7 @@
           :before-remove="beforeVodRemove"
           :on-remove="handleVodRemove"
           :file-list="fileList"
-          :action="UPLOAD_API+'/admin/vod/video/upload'"
+          :action="UPLOAD_API+'/vod/video/upload'"
           :limit="1"
           class="upload-demo">
           <el-button size="small" type="primary">上传视频</el-button>

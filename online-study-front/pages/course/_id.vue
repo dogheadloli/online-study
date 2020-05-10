@@ -103,7 +103,7 @@
 
                             <ol class="lh-menu-ol" style="display: block;">
                               <li class="lh-menu-second ml30" v-for="video in chapter.children" :key="video.id">
-                                <a :href="'/player/'+video.videoSourceId" >
+                                <a :href="'/player/'+video.videoSourceId" target="_blank">
                                   <span class="fr">
                                     <i class="free-icon vam mr10">免费试听</i>
                                   </span>
@@ -163,8 +163,6 @@ export default {
    asyncData({ params, error }) {
      return courseApi.getCourseInfo(params.id)
         .then(response => {
-          console.log(response.data.data.courseWebVo)
-          console.log(response.data.data.chapterVideoList)
           return {
             courseWebVo: response.data.data.courseWebVo,
             chapterVideoList: response.data.data.chapterVideoList

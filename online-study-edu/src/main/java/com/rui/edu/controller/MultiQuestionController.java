@@ -21,7 +21,7 @@ import java.util.Map;
  * @since 2020-05-02
  */
 @RestController
-@RequestMapping("/edu/multi-question")
+@RequestMapping("/eduservice/multi-question")
 @CrossOrigin
 public class MultiQuestionController {
     @Autowired
