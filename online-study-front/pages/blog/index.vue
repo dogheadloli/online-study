@@ -138,6 +138,9 @@
       //分页切换的方法
       //参数是页码数
       gotoPage(page) {
+        if (page > this.data.pages) {
+          page = this.data.pages;
+        }
         blogApi.getBlogList(page, 5)
           .then(response => {
             this.data = response.data.data

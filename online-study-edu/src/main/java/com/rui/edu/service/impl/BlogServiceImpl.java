@@ -65,6 +65,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
             //去除html标签
             String description = blogDescription.getDescription();
             description = description.replaceAll("\\&[a-zA-Z]{1,10};", "").replaceAll("<[^>]*>", "").replaceAll("[(/>)<]", "");
+            //截取
+            description = description.substring(0,400);
+            //添加省略号
+            description = description+"...";
             blogVo.setDescription(description);
             blogVoList.add(blogVo);
         }

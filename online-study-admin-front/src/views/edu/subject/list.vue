@@ -118,7 +118,6 @@
             message: '保存成功!'
           })
         }).then((res) => {
-          console.log('请求成功');
           this.addEventdialogVisible = false;
           this.addEventForm.subjectName = '';
           this.fetchNodeList();
@@ -134,7 +133,6 @@
             message: '修改成功!'
           })
         }).then((res) => {
-          console.log('请求成功');
           this.updateEventdialogVisible = false;
           this.updateEventForm.subjectName = '';
           this.fetchNodeList();
@@ -210,10 +208,7 @@
 
       // 节点过滤的方法
       filterNode(value, data) {
-        //   console.log('filterNode:第一个参数' + value)
-        //   console.log('filterNode:第二个参数')
         console.log(data)
-        //   console.log('执行filterNode.....')
         if (!value) return true;
         return data.label.indexOf(value) !== -1;
       }

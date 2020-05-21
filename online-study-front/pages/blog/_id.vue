@@ -3,7 +3,7 @@
     <el-row class="main" type="flex" justify="center">
       <el-col :span="16">
         <div id="artcle-info">
-            <h2 class="text-center title"><strong>{{blogVo.title}}</strong></h2>
+          <h2 class="text-center title"><strong>{{blogVo.title}}</strong></h2>
           <!-- 描述：文章信息 -->
           <div class="text-center timeAndView">
             <i class="el-icon-time"></i>
@@ -15,17 +15,18 @@
           </div>
           <div class="text-center timeAndView">
             <i class="el-icon-user"></i>
-            作者:<span>{{blogVo.userName}}</span>
+            作者：<span>{{blogVo.userName}}</span>
           </div>
         </div>
 
 
         <hr/>
-
-        <div id="artcle-content">
-          <p v-html="blogVo.description">{{blogVo.description}}</p>
+        <div class="ql-snow">
+          <div class="ql-editor" v-html="blogVo.description">
+          </div>
         </div>
-
+        <!--<p class="ql-editor" v-html="blogVo.description"></p>-->
+        <!--<div>{{blogVo.description}}</div>-->
         <hr/>
 
         <div id="statement">
@@ -38,6 +39,9 @@
 
 <script>
   import blogApi from '@/api/blog'
+  import 'quill/dist/quill.core.css'
+  import 'quill/dist/quill.snow.css'
+  import 'quill/dist/quill.bubble.css'
 
   export default {
     asyncData({params, error}) {
@@ -52,9 +56,9 @@
   };
 </script>
 
-<style scoped>
+<style scoped lang="css">
 
-  #artcle-content{
+  #artcle-content {
     font-size: 16px;
   }
 
@@ -71,7 +75,7 @@
     background-color: rgba(126, 129, 135, 0.3);
   }
 
-  #artcle-info .title{
+  #artcle-info .title {
     padding: 10px;
     line-height: 30px;
     font-size: 34px;
